@@ -14,7 +14,7 @@ async function status(request, response) {
 
   const databaseName = process.env.POSTGRES_DB;
   const databaseOpenedConnectionResult = await database.query({
-    text: "SELECT count(*)::int FROM pg_stat_activity where database = $1",
+    text: "SELECT count(*)::int FROM pg_stat_activity where datname = $1",
     values: [databaseName],
   });
   const databaseOpenedConnectionValue =
@@ -25,8 +25,8 @@ async function status(request, response) {
     dependencies: {
       database: {
         version: databaseVersionValue,
-        max_connection: parseInt(databaseMaxConnectionValue),
-        open_connection: databaseOpenedConnectionValue,
+        max_connections: parseInt(databaseMaxConnectionValue),
+        open_connections: databaseOpenedConnectionValue,
       },
     },
   });
