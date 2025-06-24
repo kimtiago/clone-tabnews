@@ -88,7 +88,7 @@ describe("POST /api/v1/users", () => {
       expect(response2Body).toEqual({
         name: "ValidationError",
         message: "O email informado já está sendo utilizado.",
-        action: "Utilize outro email para realizar o cadastro.",
+        action: "Utilize outro email para realizar esta operação.",
         status_code: 400,
       });
     });
@@ -101,7 +101,7 @@ describe("POST /api/v1/users", () => {
         },
         body: JSON.stringify({
           username: "usernameduplicado",
-          email: "usernameduplicado1@gmail.com",
+          email: "usernameduplicado1@email.com",
           password: "senha123",
         }),
       });
@@ -114,7 +114,7 @@ describe("POST /api/v1/users", () => {
         },
         body: JSON.stringify({
           username: "UsernameDuplicado",
-          email: "usernameduplicado2@gmail.com",
+          email: "usernameduplicado2@email.com",
           password: "senha123",
         }),
       });
@@ -125,7 +125,7 @@ describe("POST /api/v1/users", () => {
       expect(response2Body).toEqual({
         name: "ValidationError",
         message: "O username informado já está sendo utilizado.",
-        action: "Utilize outro username para realizar o cadastro.",
+        action: "Utilize outro username para realizar esta operação.",
         status_code: 400,
       });
     });
