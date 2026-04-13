@@ -73,7 +73,8 @@ describe("GET /api/v1/user", () => {
     });
 
     test("With nonexistent session", async () => {
-      const nonexistentToken = "nonexistent-session-token";
+      const nonexistentToken =
+        "f0b62a5ff97ae607701ceeee2e3c4987c4b9debb534410e2444f9eb2288b6e3b90158a71d086e31eabef9b36cbb549e1";
 
       const response = await fetch("http://localhost:3000/api/v1/user", {
         headers: {
