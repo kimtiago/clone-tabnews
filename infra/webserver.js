@@ -7,7 +7,7 @@ function getOrigin() {
     return `https://${process.env.VERCEL_URL}`;
   }
 
-  return "https://fintab.com.br";
+  return "https://tabnews.skynetmy.cloud/";
 }
 
 const webserver = {
